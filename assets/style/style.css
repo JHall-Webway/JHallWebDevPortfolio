@@ -1,6 +1,6 @@
 :root {
     --Primary: #778899;
-    --Secondary: #C5B358;
+    --Secondary: #CFB53B;
     --Tertiary: #D3D3D3;
 }
 * {
@@ -8,15 +8,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+p {
+    font-weight: bold;
+    font-family: garamond, helvetica, sans-serif;
+    font-size: 20px;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--Secondary) ;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    color: var(--Tertiary);
+    color:	#F0FFFF;
+}
+body:not(header) {
+    background-image: url("../images/mountain-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 500px;
 }
 header {
     display: flex;
     justify-content: space-between;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    color: var(--Tertiary);
     background: var(--Primary);
     border-bottom: 5px groove var(--Tertiary)
 }
@@ -39,4 +51,37 @@ header nav ul a {
     padding: 10px;
     text-decoration: none;
     color: var(--Tertiary);
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    }
+section h1 {
+    font-size: 38px;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+section:not(.contact-info) {
+    border-bottom: 3px solid var(--Tertiary);
+}
+section div {
+    width: 400px;
+    margin: 20px;
+}
+section img {
+    width: 400px;
+    border: 3px groove var(--Tertiary);
+}
+footer {
+    padding: 20px;
+    font-size: 12px;
+    color: var(--Secondary);
+    background-color: var(--Tertiary);
 }
