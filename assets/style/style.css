@@ -1,3 +1,4 @@
+/*general*/
 :root {
     --Primary: #778899;
     --Secondary: #CFB53B;
@@ -19,13 +20,13 @@ body {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
     color: var(--Tertiary);
     color:	#F0FFFF;
-}
-body:not(header) {
-    background-image: url("../images/mountain-svgrepo-com.svg");
+    background-image: url(../images/mountain-svgrepo-com.svg);
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 500px;
 }
+
+/*header styles*/
 header {
     position: -webkit-sticky;
     position: sticky;
@@ -60,6 +61,8 @@ header nav ul a {
 header nav ul a:hover {
     color: var(--Secondary);
 }
+
+/*sections styling */
 section {
     display: flex;
     flex-wrap: wrap;
@@ -76,16 +79,18 @@ section h1 {
     text-align: center;
     padding: 15px;
 }
+section > * {
+    border-radius: 10px;
+}
 section:not(.contact-info) {
     border-bottom: 3px solid var(--Tertiary);
 }
-section div {
+section article {
     width: 400px;
     margin: 20px;
 }
 section img {
     margin: 3px;
-    width: 400px;
     border: 5px inset var(--Tertiary);
 }
 footer {
@@ -96,14 +101,39 @@ footer {
     border-top: 5px groove var(--Tertiary);
     text-shadow: none;
 }
-section > * {
-    border-radius: 10px;
-}
 .example {
+    background-image: url(https://via.placeholder.com/400/FF0000/FFFFF?text=ProjectPlaceholder);
+    display: block;
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    text-decoration: none;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 38px;
+    color: yellow;
     transition:linear .35s;
     opacity: .7;
+}
+.firstex {
+    background-image: url("../images/run-buddy.jpg");
+    margin: 0 auto;
+    width: 1220px;
 }
 .example:hover {
     transform: scale(1.1);
     opacity: 1;
+    z-index: 9998;
 }
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        padding-bottom: 10px;
+        border-style: none;
+    }
